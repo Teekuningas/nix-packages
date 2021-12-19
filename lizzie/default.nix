@@ -21,14 +21,14 @@ in stdenv.mkDerivation rec {
 
     mkdir -p $out
 
-	mkdir $out/target
-	cp target/lizzie-0.7.4-shaded.jar $out/target/
+    mkdir $out/target
+    cp target/lizzie-0.7.4-shaded.jar $out/target/
 
-	mkdir $out/bin
-	echo "#!/bin/sh" >> $out/bin/lizzie
+    mkdir $out/bin
+    echo "#!/bin/sh" >> $out/bin/lizzie
     echo "mkdir -p ~/.config/lizzie/" >> $out/bin/lizzie
     echo "cd ~/.config/lizzie" >> $out/bin/lizzie
-	echo "java -jar $out/target/lizzie-0.7.4-shaded.jar" >> $out/bin/lizzie
-	chmod +x $out/bin/lizzie
+    echo "java -jar $out/target/lizzie-0.7.4-shaded.jar" >> $out/bin/lizzie
+    chmod +x $out/bin/lizzie
   '';
 }
